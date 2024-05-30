@@ -6,27 +6,21 @@ import './photoPage.css'
 
 const PhotoPage = () => {
     const [photo, setPhoto] = useState(null);
+    const [displayPhoto, setDisplayPhoto] = useState(null);
 
-    useEffect(() => {
-        let image = new Image();
-        image.src = './test_image.png';
-
-        image.onload = () => { // Wait for the image to load
-            console.log("Image loaded");
-            setPhoto(image); // Set the loaded image as the photo state
-        };
-
-        return () => {
-            // Clean up event listener
-            image.onload = null;
-        };
-    }, []); // Run once on mount
+    const handleFileChange = (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            setPhoto(file);
+        }
+    };
 
     return (
         <div className='photopage-container'>
-            <CapturePhoto photo={photo} setPhoto={setPhoto}></CapturePhoto>
-            {photo && <img className='image-display' src={photo} alt="Captured" />}
-            <SendPhoto photo />
+            <input type="file" accept="image/*" onChange={handleFileChange} />
+            <CapturePhoto setPhoto={setPhoto} setDisplayPhoto={setDisplayPhoto}></CapturePhoto>
+            {displayPhoto && <img className='image-display' src={displayPhoto} alt="Captured" />}
+            <SendPhoto photo={photo} />
         </div>
     )
 };
