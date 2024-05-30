@@ -1,0 +1,24 @@
+.photopage-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.photopage-container {
+    text-align: center;
+    /* margin-top: 50px; */
+}
+.video-display {
+    display: none;
+    margin-top: 20px;
+}
+
+.canvas-display {
+    display: none;
+}
+
+.image-display {
+    height: 'auto';
+}
