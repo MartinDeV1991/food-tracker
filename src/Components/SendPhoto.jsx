@@ -7,7 +7,7 @@ const sendPhoto = ({ photo }) => {
         const formData = new FormData();
         formData.append('photo', photo);
         console.log('photo: ', photo)
-        fetch('http://localhost:5000/api/process-image', {
+        fetch('https://food-tracker-backend.azurewebsites.net/api/process-image', {
             method: 'POST',
             body: formData,
             crossorigin: true,
