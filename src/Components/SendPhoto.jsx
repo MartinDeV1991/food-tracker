@@ -1,13 +1,15 @@
+import React from "react";
 
 
-const sendPhoto = ({ photo }) => {
+const SendPhoto = ({ photo, setNutritionalValue, setDisplayInfo }) => {
 
     const send = () => {
-
+        let url = 'https://food-tracker-backend.azurewebsites.net'
+        // let url = 'http://localhost:5000'
         const formData = new FormData();
         formData.append('photo', photo);
         console.log('photo: ', photo)
-        fetch('https://food-tracker-backend.azurewebsites.net/api/process-image', {
+        fetch(`${url}/api/process-image`, {
             method: 'POST',
             body: formData,
             crossorigin: true,
@@ -15,6 +17,10 @@ const sendPhoto = ({ photo }) => {
             .then((response) => response.json())
             .then((data) => {
                 console.log("data: ", data)
+                console.log(data.food_item[0].calories.per_item.calories)
+
+                setNutritionalValue(data)
+                setDisplayInfo(true)
             })
             .catch(error => {
                 console.error('Error processing image: ', error);
@@ -28,4 +34,4 @@ const sendPhoto = ({ photo }) => {
     )
 };
 
-export default sendPhoto
+export default SendPhoto
