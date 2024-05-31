@@ -22,7 +22,8 @@ const ShowFood = ({ nutritionalValue, displayPhoto, setDisplayInfo, setDisplayPh
                         {/* <div><strong>Vitamin C:</strong> {nutritionalValue.food_item.vitamin_c.per_item}</div>
                         <div><strong>Potassium:</strong> {nutritionalValue.food_item.potassium.per_item}</div> */}
                     </div>
-                    <button onClick={handleButton}>Add to my day</button>
+                    <button className='buttons-style' style={{marginRight: '10px'}} onClick={handleButton}>Add to my day</button>
+                    <button className='buttons-style' style={{marginLeft: '10px'}} onClick={handleButton}>Don't add</button>
                 </div>
             )}
 

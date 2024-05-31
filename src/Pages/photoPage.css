@@ -7,7 +7,7 @@
     /* background-color: blue; */
     background: linear-gradient(30deg, rgba(167, 159, 245, 1) 0%, rgba(210, 207, 237, 1) 35%, rgba(241, 240, 251, 1) 100%);
     width: 55%;
-    height: 1000px;
+    height: 1200px;
     position: relative;
     left: 22.5%;
 }
@@ -42,8 +42,25 @@
     margin-left: 100px;
     background-color: rgba(241, 240, 251, 1);
     border-radius: 5px;
-    color: blue;
     padding: 10px;
+    box-shadow: 0px 2px 0px #453BA7;
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 18px;
+    letter-spacing: 0.05em;
+
+    color: #453BA7;
+}
+
+.buttons-style {
+    border-radius: 90px;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #453BA7;
+    color: white;
     box-shadow: 0px 2px 0px #453BA7;
     font-family: 'PT Sans';
     font-style: normal;
@@ -51,6 +68,4 @@
     font-size: 14px;
     line-height: 18px;
     letter-spacing: 0.05em;
-
-    color: #453BA7;
 }

@@ -1,7 +1,7 @@
 import { BrowserRouter ,Route, Routes } from 'react-router-dom'
 import './App.css';
 import PhotoPage from './Pages/PhotoPage';
-import NutritionPage from './Components/ShowFood';
+import Chatbot from './Pages/Chatbot';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<PhotoPage />} />
-          <Route path="/food" element={<NutritionPage />} />
+          <Route path="/chatbot" element={<Chatbot />} />
         </Routes>
       </BrowserRouter>
     </div>

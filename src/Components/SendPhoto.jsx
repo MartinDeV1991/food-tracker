@@ -29,7 +29,7 @@ const SendPhoto = ({ photo, setNutritionalValue, setDisplayInfo }) => {
     }
     return (
         <div>
-            <button onClick={send}>Identify the image</button>
+            <button className='buttons-style' onClick={send}>Identify the image</button>
         </div>
     )
 };

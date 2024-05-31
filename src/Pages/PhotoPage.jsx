@@ -19,13 +19,18 @@ const PhotoPage = () => {
         }
     };
 
+    const goToChatbot = () => {
+        window.location.href = 'http://localhost:5000';
+    };
+
     return (
         <div className='photopage-container'>
-            {!displayInfo && <input type="file" accept="image/*" onChange={handleFileChange} />}
+            {!displayInfo && <input  type="file" accept="image/*" onChange={handleFileChange} />}
             {!displayInfo && <CapturePhoto setPhoto={setPhoto} setDisplayPhoto={setDisplayPhoto}></CapturePhoto>}
             {!displayInfo && displayPhoto && <img className='image-display' src={displayPhoto} alt="Captured" />}
-            {!displayInfo && <SendPhoto photo={photo} setNutritionalValue={setNutritionalValue} setDisplayInfo={setDisplayInfo}/>}
-            {displayInfo && <ShowFood nutritionalValue={nutritionalValue} displayPhoto={displayPhoto} setDisplayInfo={setDisplayInfo} setDisplayPhoto={setDisplayPhoto}/>}
+            {!displayInfo && <SendPhoto photo={photo} setNutritionalValue={setNutritionalValue} setDisplayInfo={setDisplayInfo} />}
+            {displayInfo && <ShowFood nutritionalValue={nutritionalValue} displayPhoto={displayPhoto} setDisplayInfo={setDisplayInfo} setDisplayPhoto={setDisplayPhoto} />}
+            <button className='buttons-style' onClick={goToChatbot}>Go to Chatbot</button>
         </div>
     )
 };

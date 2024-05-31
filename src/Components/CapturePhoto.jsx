@@ -57,7 +57,7 @@ const CapturePhoto = ({ setPhoto, setDisplayPhoto }) => {
   return (
     <div className="photocapture-container">
       <h1>Capture Photo</h1>
-      <button id="captureButton" onClick={handleCapture}>Capture Photo</button>
+      <button className='buttons-style' id="captureButton" onClick={handleCapture}>Capture Photo</button>
       <video className='video-display' ref={videoRef} autoPlay ></video>
       <canvas className='canvas-display' ref={canvasRef} ></canvas>
     </div>
